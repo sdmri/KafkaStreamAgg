@@ -9,7 +9,6 @@ import java.io.IOException;
 
 public class KafkaMessageDeserializationSchema implements KeyedDeserializationSchema<Event> {
 
-    @Override
     public Event deserialize(byte[] messageKey, byte[] message, String s, int i, long l) throws IOException {
         String messageStr = new String(message);
         String[] tokens = messageStr.split("_");
@@ -18,12 +17,10 @@ public class KafkaMessageDeserializationSchema implements KeyedDeserializationSc
         return e;
     }
 
-    @Override
     public boolean isEndOfStream(Event event) {
         return false;
     }
 
-    @Override
     public TypeInformation<Event> getProducedType() {
         return TypeExtractor.getForClass(Event.class);
     }
