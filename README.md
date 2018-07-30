@@ -35,6 +35,8 @@ StreamingApplication.java will keep printing out distinct count for each user fo
       2> (1,13,[10019, 10018, 10007, 10010, 10002, 10013, 10001, 10015, 10004, 10003, 10006, 10005, 10016])
       1> (4,13,[10019, 10007, 10018, 10009, 10011, 10010, 10013, 10002, 10012, 10001, 10015, 10004, 10005])
 
+The first field is user_id followed by the distinct count of hotel_ids in that bucket. Finally, we have the actual set of
+unique hotel_ids
 These values are persisted in Redis to calculate the approximate unique count when requested for.
 
 
